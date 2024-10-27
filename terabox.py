@@ -60,12 +60,12 @@ async def start_command(client, message):
     # Replace with your direct image URL
     image_url = "https://i.ibb.co/4tBsVPx/image.jpg"
 
-    await client.send_photo(
+        await client.send_photo(
         chat_id=message.chat.id,
         photo=image_url,
         caption=reply_message,
         reply_markup=reply_markup
-    )
+        )
     else:
         await message.reply_text(reply_message, reply_markup=reply_markup)
 
