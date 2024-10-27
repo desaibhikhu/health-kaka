@@ -56,14 +56,16 @@ async def start_command(client, message):
     join_button = InlineKeyboardButton("Tᴍʀ ʙᴏᴛᴢ", url="https://t.me/TMR_Botz")
     developer_button = InlineKeyboardButton("ᴅᴇᴠᴇʟᴏᴘᴇʀ ⚡️", url="https://t.me/TMR_DEVELOPER")
     reply_markup = InlineKeyboardMarkup([[join_button, developer_button]])
-    video_file_id = "/app/VID_20240424_202515_909.mp4"
-    if os.path.exists(video_file_id):
-        await client.send_video(
-            chat_id=message.chat.id,
-            video=video_file_id,
-            caption=reply_message,
-            reply_markup=reply_markup
-        )
+
+    # Replace with your direct image URL
+    image_url = "https://i.ibb.co/4tBsVPx/image.jpg"
+
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=image_url,
+        caption=reply_message,
+        reply_markup=reply_markup
+    )
     else:
         await message.reply_text(reply_message, reply_markup=reply_markup)
 
